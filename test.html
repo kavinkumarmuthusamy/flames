@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAMES</title>
+    <script src="https://kit.fontawesome.com/a816b3ac93.js" crossorigin="anonymous"></script>
+    <style>body{
+    text-align: center;
+    }</style>
+</head>
+<body>
+    <h1>enter the name</h1>
+    <input id="fname" type="text">
+    <h1>enter the name</h1>
+    <input id="sname" type="text">
+    <button onclick="summit()">summit</button>
+    <h1 id="out">wait for your input</h1>
+    <i class="fa-solid fa-input-text" id="fa"></i>
+    <script>
+     document.getElementById("out").style.color="gold";
+          function summit(){
+           let a=document.getElementById("fname").value;
+           let b=document.getElementById("sname").value;
+           const arr=a.split("");
+           const brr=b.split("");
+          let c=0;
+          let res=0;
+           for(let i=0;i<arr.length;i++){
+            res=0;
+            for(let j=0;j<brr.length;j++){
+              if(arr[i]==brr[j]){
+                res=1;
+                brr[j]=0;
+                break;
+              }
+            }
+            if(res!=0) {
+        		 c++;
+        	 }
+           }
+           let d=(a.length+b.length)-(c*2);
+           console.log(d);
+           console.log(c);
+         let s=d;
+    	  var g = "flames";
+         const grr=g.split("");
+         let e=1;
+         if(d!=1) {
+          while(g.length>1) {        			  
+        	  g="";
+        	  for(let i=0;i<grr.length;i++) {
+        		 if(grr[i]!=0) {
+        			 if(e==d) {
+        			  grr[i]=0;
+        			  d=d+s-1;
+        		  }
+        			 else {
+        			 g+=grr[i];
+        		  e++;}
+        			 }
+        	  }        		 
+
+          }
+         }else {
+        	 g="s";
+         }
+         console.log(g);
+         switch(g) {
+       case "f":
+       console.log("friend")
+       document.getElementById("out").innerHTML="friend";
+       document.getElementById("out").style.color="goldenrod";
+       document.getElementById("fa").className="fa-solid fa-user-group"
+    	   break;
+       case "l":
+       console.log("love");
+       document.getElementById("out").innerHTML="love";
+       document.getElementById("out").style.color="rose";
+    	   break;
+       case "a":
+       console.log("affection");
+       document.getElementById("out").innerHTML="affection";
+       document.getElementById("out").style.color="ligthrose";
+    	   break;
+       case "m":
+       console.log("marriage");
+       document.getElementById("out").innerHTML="marriage";
+       document.getElementById("out").style.color="green";
+    	   break;
+       case "e":
+       console.log("enemy");
+       document.getElementById("out").innerHTML="enemy";
+       document.getElementById("out").style.color="red";
+           break;
+       case "s":
+       console.log("sister");
+       document.getElementById("out").innerHTML="sister";
+       document.getElementById("out").style.color="blue";
+    	   break;
+       }
+          }
+    </script>
+</body>
+</html>
