@@ -25,8 +25,39 @@
 <body>
     <h1>enter the name</h1>
     <input id="fname" type="text">
+    <button style="border: 0px; background-color: rgb(254, 255, 255);" id="fio" class="fa fa-eye" onclick="myFunction()"></button>
+    
+    <script>
+    function myFunction() {
+      var x = document.getElementById("fname");
+      if (x.type === "password") {
+        x.type = "text";
+        document.getElementById("fio").className="fa fa-eye";
+      } else {
+        x.type = "password";
+        document.getElementById("fio").className="fa fa-eye-slash";
+      }
+    }
+     </script>
+    
     <h1>enter the name</h1>
-    <input id="sname" type="text"><br><br>
+    <input id="sname" type="text">
+    <button style="border: 0px; background-color: rgb(254, 255, 255);" id="sio" class="fa fa-eye" onclick="myFunction()"></button>
+    
+    <script>
+    function myFunction() {
+      var x = document.getElementById("sname");
+      if (x.type === "password") {
+        x.type = "text";
+        document.getElementById("sio").className="fa fa-eye";
+      } else {
+        x.type = "password";
+        document.getElementById("sio").className="fa fa-eye-slash";
+      }
+    }
+     </script>
+    
+    <br><br>
     <button onclick="summit()" class="out">Plese chick me to check</button>
     <h1 id="out">wait for your input</h1>
     <i class="fa fa-user-friends" id="icon" style="font-size:48px;color:white"></i>
