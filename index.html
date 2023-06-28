@@ -26,8 +26,14 @@
     <form method="post" name="flames">
     <h1>enter the name</h1>
     <input name="firstname" id="fname" type="text">
+        
+    <h1>enter the name</h1>
+    <input name="secondname" id="sname" type="text">
     <i style="border: 0px; background-color: rgb(254, 255, 255);" id="fio" class="fa fa-eye" onclick="ffun()"></i>
-    
+
+    <br><br>
+    <button type="submit" onclick="summit()" class="out">Plese chick me to check</button>
+</form>
     <script>
     function ffun() {
       var x = document.getElementById("fname");
@@ -41,8 +47,7 @@
     }
      </script>
   
-    <h1>enter the name</h1>
-    <input name="secondname" id="sname" type="text">
+   
     <i style="border: 0px; background-color: rgb(254, 255, 255);" id="sio" class="fa fa-eye" onclick="sfun()"></i>
     
     <script>
@@ -58,9 +63,7 @@
     }
      </script>
     
-    <br><br>
-    <button type="submit" onclick="summit()" class="out">Plese chick me to check</button>
-</form>
+    
     <h1 id="out">wait for your input</h1>
     <i class="fa fa-user-friends" id="icon" style="font-size:48px;color:white"></i>
     <img src="" class="test">
