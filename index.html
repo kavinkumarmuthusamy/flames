@@ -23,8 +23,9 @@
     </style>
 </head>
 <body>
+    <form method="post" name="flames">
     <h1>enter the name</h1>
-    <input id="fname" type="text">
+    <input name="firstname" id="fname" type="text">
     <button style="border: 0px; background-color: rgb(254, 255, 255);" id="fio" class="fa fa-eye" onclick="ffun()"></button>
     
     <script>
@@ -39,9 +40,9 @@
       }
     }
      </script>
-    
+  
     <h1>enter the name</h1>
-    <input id="sname" type="text">
+    <input name="secondname" id="sname" type="text">
     <button style="border: 0px; background-color: rgb(254, 255, 255);" id="sio" class="fa fa-eye" onclick="sfun()"></button>
     
     <script>
@@ -58,7 +59,8 @@
      </script>
     
     <br><br>
-    <button onclick="summit()" class="out">Plese chick me to check</button>
+    <button type="submit" onclick="summit()" class="out">Plese chick me to check</button>
+</form>
     <h1 id="out">wait for your input</h1>
     <i class="fa fa-user-friends" id="icon" style="font-size:48px;color:white"></i>
     <img src="" class="test">
@@ -156,5 +158,18 @@
        }
           }
     </script>
-</body>
-</html>
+
+ <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbye5XRxaVZ3iGwbr7jKuiRqLr6lKp4r1EngOUQ5xUGkkCgHBrt337qrYYrN-6FCUEi6/exec'
+    const form = document.forms['flames']
+    
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    //   .then(response => alert("Thank you! your form is submitted successfully." ))
+      .then(() => {  window.location.reload(); })
+      .catch(error => console.error('Error!', error.message))
+    })
+    </script>
+    </body>
+    </html>
